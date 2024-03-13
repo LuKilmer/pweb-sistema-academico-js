@@ -20,7 +20,7 @@ class AlunoControlador {
         
     }
     atualizar(){
-        
+        alert("Editar de Aluno não funciona")
     }
 
     inserirAlunoNoHtml(aluno, elementoDestino) {
