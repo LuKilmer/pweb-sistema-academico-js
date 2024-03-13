@@ -1,22 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Acadêmico - IFPB</title>
 </head>
+
 <body>
-    Nome: <input id="nome"> <br>
-    Idade: <input id="idade"> <br>
+    <div style="display:flex;justify-content:space-between">
+<div>
+    <p>Cadastrar Aluno</p>
+    Nome:<input id="nome"><br>
+    Idade:<input id="idade" type="number"><br>
+    Matrícula:<input id="matricula"><br>
 
-    <button onclick="alunoControlador.inserir()">Inserir</button>
+    <button onclick="controlador.inserir()">Cadastrar</button>
 
-    <h1>Listagem de Alunos</h1>
-    <p>Nome - Idade</p>
+</div>
+    <div>
+        <p>Cadastrar disciplina</p>
+        Nome:<input id="nome"><br>
+        Código:<input id="codigo" ><br>
+        <button onclick="controladorDisiciplina.
+    inserir()
+    ">Cadastrar</button><br>
+    </div>
 
-    <script src="js/model/aluno.js"></script>
-    <script src="js/repositorio/aluno-repositorio.js"></script>
-    <script src="js/servico/aluno-servico.js"></script>
-    <script src="js/controller/aluno-controlador.js"></script>
-    <script src="js/script.js"></script>
+<div>
+    <p>Cadastrar Aluno na Disciplina</p>
+    Matricula:<input id="matricula_ad"><br>
+    Código:<input id="codigo_ad" ><br>
+    <button onclick="controladorDisiciplina.inserirAlunoDisciplina()
+    ">Cadastrar</button></div>
+    </div>
+
+<p>Lista de Alunos</p>
+    <ol id="listaAlunos">
+
+    </ol>
+<p>Lista Disciplinas</p>
+    <ol id="listaDisiciplina">
+    
+    </ol>
+
+    
+    <ul id="listaAlunosMenores">
+    </ul>
+    
+ <script src="modelo/aluno.js"></script>
+<script src="repositorio/aluno_repositorio.js"></script>
+<script src="servico/aluno_service.js"></script>
+<script src="controlador/aluno_controlador.js"></script>
+  <script src="./modelo/disciplina.js"></script>
+  <script src="repositorio/disciplina_repositorio.
+js"></script>
+  <script src="servico/disciplina_service.js"></script>
+  <script src="controlador/disciplina_controlador.
+js"></script>
+  <script src="script.js"></script>
+
 </body>
+
 </html>

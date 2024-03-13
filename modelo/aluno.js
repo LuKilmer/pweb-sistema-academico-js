@@ -1,7 +1,9 @@
 class Aluno {
-    constructor(nome, idade) {
+
+    constructor(nome, idade, matricula) {
         this._nome = nome;
         this.idade = idade;
+        this.matricula = matricula;
     }
 
     get nome() {
