@@ -5,14 +5,19 @@ class AlunoControlador {
     }
 
     inserir() {
-        const nomeElemento = document.querySelector("#nome");
-        const idadeElemento = document.querySelector("#idade");
-        const matriculoElemento = document.querySelector("#matricula");
-        const alunoInserido = this.servico.inserir(nomeElemento.value, Number(idadeElemento.value),  matriculoElemento.value);
-        const listaAlunosElemento = document.querySelector("#listaAlunos");
-        if (alunoInserido) {
-            this.inserirAlunoNoHtml(alunoInserido, listaAlunosElemento);
+        try{
+            const nomeElemento = document.querySelector("#nome_aluno");
+            const idadeElemento = document.querySelector("#idade_aluno");
+            const matriculoElemento = document.querySelector("#matricula_aluno");
+            const alunoInserido = this.servico.inserir(nomeElemento.value, Number(idadeElemento.value),  matriculoElemento.value);
+            const listaAlunosElemento = document.querySelector("#listaAlunos");
+            if (alunoInserido){
+                this.inserirAlunoNoHtml(alunoInserido, listaAlunosElemento);
+            }
+        }catch(error){
+            alert(error.message);
         }
+        
     }
 
     inserirAlunoNoHtml(aluno, elementoDestino) {
