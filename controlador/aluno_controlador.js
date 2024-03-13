@@ -19,10 +19,13 @@ class AlunoControlador {
         }
         
     }
+    atualizar(){
+        
+    }
 
     inserirAlunoNoHtml(aluno, elementoDestino) {
         const alunoElemento = document.createElement("li");
-        alunoElemento.textContent = `Nome: ${aluno.nome} - Idade: ${aluno.idade}`;
+        alunoElemento.textContent = `Matricula: ${aluno.matricula} - Nome: ${aluno.nome} - Idade: ${aluno.idade}`;
         elementoDestino.appendChild(alunoElemento);
     }
 

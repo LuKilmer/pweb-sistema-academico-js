@@ -13,18 +13,19 @@
         Idade:<input id="idade_aluno" type="number"><br>
         Matrícula:<input id="matricula_aluno"><br>
         <button onclick="controladorAluno.inserir()">Cadastrar</button>
-        <button onclick="controladorDisiciplina.inserir()">Editar</button><br>
+        <button onclick="controladorDisiciplina.atualizar()">Editar</button><br>
     </div>
     <div><p>Cadastrar disciplina</p>
         Nome:<input id="nome_disciplina"><br>
         Código:<input id="codigo_disciplina" ><br>
         <button onclick="controladorDisiciplina.inserir()">Cadastrar</button>
-        <button onclick="controladorDisiciplina.inserir()">Editar</button><br>
+        <button onclick="controladorDisiciplina.atualizar()">Editar</button><br>
     </div>
-    <div><p>Cadastrar Aluno na Disciplina</p>
+    <div><p>Inserir Aluno na Disciplina</p>
         Matricula:<input id="matricula_ad"><br>
         Código:<input id="codigo_ad" ><br>
-        <button onclick="controladorDisiciplina.inserirAlunoDisciplina()">Cadastrar</button>
+        <button onclick="controladorDisiciplina.inserirAlunoDisciplina()">Adicionar</button>
+        <button onclick="controladorDisiciplina.removerAlunoDisciplina()">Remover</button>
     </div>
 </div>
 <div >

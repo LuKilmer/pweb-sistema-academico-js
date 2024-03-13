@@ -17,11 +17,36 @@ class disciplinaControlador {
         }
     }
 
+    atualizar(){
+        try{
+            const nomeElemento = document.querySelector("#nome_disciplina");
+            const codigoElemento = document.querySelector("#codigo_disciplina");
+            const disciplinaAtualizada = this.servico.atualizar(nomeElemento.value,  codigoElemento.value);
+            this.atualizarDisciplinasNoHtml();
+        }catch(error){
+            alert(error.message);
+        }
+    }
+
     inserirAlunoDisciplina(){
         try{
             const matriculaElemento = document.querySelector("#matricula_ad");
             const codigoElemento = document.querySelector("#codigo_ad");
             const alunoInserido = this.servico.inserirAlunoDisciplina(matriculaElemento.value, codigoElemento.value);
+            if(alunoInserido){
+                this.atualizarDisciplinasNoHtml();
+            }
+            return alunoInserido;
+        }catch(error){
+            alert(error.message);
+        }
+    }
+
+    removerAlunoDisciplina(){
+        try{
+            const matriculaElemento = document.querySelector("#matricula_ad");
+            const codigoElemento = document.querySelector("#codigo_ad");
+            const alunoInserido = this.servico.removerAlunoDisciplina(matriculaElemento.value, codigoElemento.value);
             if(alunoInserido){
                 this.atualizarDisciplinasNoHtml();
             }
@@ -43,6 +68,14 @@ class disciplinaControlador {
             alert(error.message);
         }
     }
+    inserirAlunosNoHtmlDisciplina(disciplinaElemento, alunos){
+        const listaAlunos = document.createElement("ul");
+        alunos.forEach(aluno => {
+            controladorAluno.inserirAlunoNoHtml(aluno, listaAlunos);
+        });
+        disciplinaElemento.appendChild(listaAlunos);
+    }
+
 
     inserirDisciplinaNoHtml(disciplina, elementoDestino) {
         try{
@@ -57,6 +90,9 @@ class disciplinaControlador {
                 }
             );
             disciplinaElemento.appendChild(elementoBotaoApagar);
+            if(disciplina.alunos.length>0){
+                this.inserirAlunosNoHtmlDisciplina(disciplinaElemento, disciplina.alunos);
+            }
             elementoDestino.appendChild(disciplinaElemento);
         }catch(error){
             alert(error.message);
