@@ -15,10 +15,10 @@ class DisciplinaRepositorio {
         }
     }
 
-
     inserirAlunoDisciplina(disciplina, aluno){
         const index = this.disciplinas.indexOf(disciplina)
         this.disciplinas[index].alunos.push(aluno);
+
         return aluno;
     }
 
