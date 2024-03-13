@@ -1,0 +1,1 @@
+const alunoControlador = new AlunoControlador();
